@@ -1,5 +1,5 @@
 {
-  "name": "appium-webdriveragent",
+  "name": "appium-webdriveragent-ios",
   "version": "8.12.0",
   "description": "Package bundling WebDriverAgent",
   "main": "./build/index.js",
@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appium/WebDriverAgent.git"
+    "url": "git+https://github.com/qa-pilot/WebDriverAgent.git"
   },
   "keywords": [
     "Appium",
@@ -44,9 +44,9 @@
   "author": "Appium Contributors",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/appium/WebDriverAgent/issues"
+    "url": "https://github.com/qa-pilot/WebDriverAgent/issues"
   },
-  "homepage": "https://github.com/appium/WebDriverAgent#readme",
+  "homepage": "https://github.com/qa-pilot/WebDriverAgent#readme",
   "devDependencies": {
     "@appium/eslint-config-appium-ts": "^0.x",
     "@appium/test-support": "^3.0.0",
