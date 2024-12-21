@@ -37,6 +37,7 @@
 static NSString *const SOURCE_FORMAT_XML = @"xml";
 static NSString *const SOURCE_FORMAT_JSON = @"json";
 static NSString *const SOURCE_FORMAT_DESCRIPTION = @"description";
+static NSString *const SOURCE_FORMAT_NEW_JSON = @"newJson";
 
 + (id<FBResponsePayload>)handleGetSourceCommand:(FBRouteRequest *)request
 {
@@ -62,6 +63,8 @@ static NSString *const SOURCE_FORMAT_DESCRIPTION = @"description";
     result = [application fb_tree:excludedAttributes];
   } else if ([sourceType caseInsensitiveCompare:SOURCE_FORMAT_DESCRIPTION] == NSOrderedSame) {
     result = application.fb_descriptionRepresentation;
+  } else if ([sourceType caseInsensitiveCompare:SOURCE_FORMAT_NEW_JSON] == NSOrderedSame) {
+    result = application.fb_snapshot_tree;
   } else {
     return FBResponseWithStatus([FBCommandStatus invalidArgumentErrorWithMessage:[NSString stringWithFormat:@"Unknown source format '%@'. Only %@ source formats are supported.",
                                                                                   sourceType, @[SOURCE_FORMAT_XML, SOURCE_FORMAT_JSON, SOURCE_FORMAT_DESCRIPTION]] traceback:nil]);

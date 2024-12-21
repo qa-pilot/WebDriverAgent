@@ -37,6 +37,7 @@
 #import "XCUIElement+FBUtilities.h"
 #import "XCUIElement+FBWebDriverAttributes.h"
 #import "XCUIElementQuery.h"
+#import "XCUIElementAttributeName+FBHelper.h"
 
 static NSString* const FBUnknownBundleId = @"unknown";
 
@@ -151,6 +152,17 @@ NSDictionary<NSNumber *, NSString *> *auditTypeValuesToNames(void) {
   return YES;
 }
 
+- (NSDictionary *)fb_snapshot_tree {
+  NSError *error = nil;
+  NSDictionary<XCUIElementAttributeName, id> *dictionaryRepresentation = [self snapshotWithError:&error].dictionaryRepresentation;
+  
+  if (error) {
+    [FBLogger logFmt:@"Error occurred while snapshot the view hierarchy %@", error.description];
+    return @{};
+   }
+  return [self.class dictionaryForElement:dictionaryRepresentation recursive:YES];
+}
+
 - (NSDictionary *)fb_tree
 {
   return [self fb_tree:nil];
@@ -225,6 +237,31 @@ NSDictionary<NSNumber *, NSString *> *auditTypeValuesToNames(void) {
       [info[@"children"] addObject:[self dictionaryForElement:childSnapshot 
                                                     recursive:YES
                                            excludedAttributes:excludedAttributes]];
+    }
+  }
+  return info;
+}
+
++ (NSDictionary *)dictionaryForElement:(NSDictionary<XCUIElementAttributeName, id> *)dictionaryRepresentation
+                             recursive:(BOOL)recursive
+{
+  NSMutableDictionary *info = [[NSMutableDictionary alloc] init];
+  info[@"type"] = [FBElementTypeTransformer shortStringWithElementType:[XCUIElementAttributeName_FBHelper elementType:dictionaryRepresentation]];
+  
+  info[@"rawIdentifier"] = FBValueOrNull([XCUIElementAttributeName_FBHelper rawIdentifier:dictionaryRepresentation]);
+  info[@"name"] = FBValueOrNull([XCUIElementAttributeName_FBHelper name:dictionaryRepresentation]);
+  info[@"value"] = FBValueOrNull([XCUIElementAttributeName_FBHelper value:dictionaryRepresentation]);
+  info[@"label"] = FBValueOrNull([XCUIElementAttributeName_FBHelper label:dictionaryRepresentation]);
+  info[@"rect"] = [XCUIElementAttributeName_FBHelper rect:dictionaryRepresentation];
+  info[@"enabled"] = [@([XCUIElementAttributeName_FBHelper isEnabled:dictionaryRepresentation]) stringValue];
+  info[@"focused"] = [@([XCUIElementAttributeName_FBHelper isFocused:dictionaryRepresentation]) stringValue];
+
+  NSDictionary<XCUIElementAttributeName, id> *childElements = dictionaryRepresentation[XCUIElementAttributeNameChildren];
+  if ([childElements count]) {
+    info[@"children"] = [[NSMutableArray alloc] init];
+    for (id childSnapshot in childElements) {
+      [info[@"children"] addObject:[self dictionaryForElement:childSnapshot
+                                                    recursive:YES]];
     }
   }
   return info;

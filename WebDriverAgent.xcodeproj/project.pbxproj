@@ -805,6 +805,10 @@
 		EEE3764A1D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE376481D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m */; };
 		EEE9B4721CD02B88009D2030 /* FBRunLoopSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE9B4701CD02B88009D2030 /* FBRunLoopSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE9B4731CD02B88009D2030 /* FBRunLoopSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE9B4711CD02B88009D2030 /* FBRunLoopSpinner.m */; };
+		F2EE4A682D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = F2EE4A662D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h */; };
+		F2EE4A692D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = F2EE4A662D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h */; };
+		F2EE4A6A2D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EE4A672D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m */; };
+		F2EE4A6B2D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EE4A672D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1377,6 +1381,8 @@
 		EEE9B4701CD02B88009D2030 /* FBRunLoopSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRunLoopSpinner.h; sourceTree = "<group>"; };
 		EEE9B4711CD02B88009D2030 /* FBRunLoopSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRunLoopSpinner.m; sourceTree = "<group>"; };
 		EEF9882A1C486603005CA669 /* WebDriverAgentRunner.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebDriverAgentRunner.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EE4A662D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCUIElementAttributeName+FBHelper.h"; sourceTree = "<group>"; };
+		F2EE4A672D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XCUIElementAttributeName+FBHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1789,6 +1795,8 @@
 				71E75E6C254824230099FC87 /* XCUIElementQuery+FBHelpers.m */,
 				13DE7A59287CA444003243C6 /* FBXCElementSnapshotWrapper+Helpers.h */,
 				13DE7A5A287CA444003243C6 /* FBXCElementSnapshotWrapper+Helpers.m */,
+				F2EE4A662D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h */,
+				F2EE4A672D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m */,
 			);
 			name = Categories;
 			path = WebDriverAgentLib/Categories;
@@ -2329,6 +2337,7 @@
 				641EE6652240C5CA00173FCB /* UILongPressGestureRecognizer-RecordingAdditions.h in Headers */,
 				641EE6662240C5CA00173FCB /* XCTestCase.h in Headers */,
 				641EE6672240C5CA00173FCB /* XCSymbolicatorHolder.h in Headers */,
+				F2EE4A692D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h in Headers */,
 				641EE6682240C5CA00173FCB /* XCUIApplicationImpl.h in Headers */,
 				71414ED72670A1EE003A8C5D /* LRUCacheNode.h in Headers */,
 				641EE6692240C5CA00173FCB /* UIPanGestureRecognizer-RecordingAdditions.h in Headers */,
@@ -2674,6 +2683,7 @@
 				EE35AD261E3B77D600A02D78 /* XCApplicationMonitor_iOS.h in Headers */,
 				EE3A18661CDE734B00DE4205 /* FBKeyboard.h in Headers */,
 				AD6C269C1CF2494200F8B5FF /* XCUIApplication+FBHelpers.h in Headers */,
+				F2EE4A682D16E6D500489371 /* XCUIElementAttributeName+FBHelper.h in Headers */,
 				714D88CC2733FB970074A925 /* FBXMLGenerationOptions.h in Headers */,
 				EE35AD101E3B77D600A02D78 /* _XCTestObservationCenterImplementation.h in Headers */,
 				AD6C26981CF2481700F8B5FF /* XCUIDevice+FBHelpers.h in Headers */,
@@ -3139,6 +3149,7 @@
 				13DE7A46287C2A8D003243C6 /* FBXCAccessibilityElement.m in Sources */,
 				641EE5FE2240C5CA00173FCB /* XCUIElement+FBWebDriverAttributes.m in Sources */,
 				641EE5FF2240C5CA00173FCB /* XCUIElement+FBForceTouch.m in Sources */,
+				F2EE4A6B2D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m in Sources */,
 				716C9E0327315EFF005AD475 /* XCUIApplication+FBUIInterruptions.m in Sources */,
 				641EE6002240C5CA00173FCB /* FBTouchActionCommands.m in Sources */,
 				719DCF182601EAFB000E765F /* FBNotificationsHelper.m in Sources */,
@@ -3241,6 +3252,7 @@
 				EEE9B4731CD02B88009D2030 /* FBRunLoopSpinner.m in Sources */,
 				719CD8F92126C78F00C7D0C2 /* FBAlertsMonitor.m in Sources */,
 				71A7EAFA1E224648001DA4F2 /* FBClassChainQueryParser.m in Sources */,
+				F2EE4A6A2D16E6D500489371 /* XCUIElementAttributeName+FBHelper.m in Sources */,
 				718226D02587443700661B83 /* GCDAsyncUdpSocket.m in Sources */,
 				13DE7A51287C46BB003243C6 /* FBXCElementSnapshot.m in Sources */,
 				71A224E61DE2F56600844D55 /* NSPredicate+FBFormat.m in Sources */,

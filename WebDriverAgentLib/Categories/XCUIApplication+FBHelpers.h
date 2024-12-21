@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDictionary *)fb_tree:(nullable NSSet<NSString *> *) excludedAttributes;
 
 /**
+  Return application elements tree in form of nested dictionaries using xcuitest snapshot method
+ */
+- (NSDictionary *)fb_snapshot_tree;
+
+/**
  Return application elements accessibility tree in form of nested dictionaries
  */
 - (NSDictionary *)fb_accessibilityTree;
